@@ -5,8 +5,18 @@
         <script src="main.js"></script>
     </head>
     <body>
+        <h1>
+            Custom Saber Builder
+        </h1>
+        <p>
+            Please note, this site is extremely incomplete at the moment.  It's not feature complete, it's not responsive, and it's not pretty.  
+        </p>
+
         <div class="c-lightsaber js-lightsaber-builder">
             <div class="c-lightsaber__part-selector-wrap">
+                <label for="lightsaber-emitter">
+                    Select Emitter
+                </label><br />
                 <select class="c-lightsaber__part-selector js-part-selector" data-target="#lightsaber-emitter">
 					<option value="images/peace_justice_emitter_2.png">Peace & Justice 2</option>
                     <option value="images/power_control_emitter_1.png" selected>Power & Control 1</option>
@@ -14,6 +24,9 @@
                 </select>
             </div>
             <div class="c-lightsaber__part-selector-wrap">
+                <label for="lightsaber-sleeve-1-selector">
+                    Select Sleeve 1
+                </label><br />
                 <select class="c-lightsaber__part-selector js-part-selector" id="lightsaber-sleeve-1-selector"
 				data-target="#lightsaber-sleeve-1"
 				data-uses-duplicate-check="true"
@@ -27,11 +40,17 @@
                 </select>
             </div>
             <div class="c-lightsaber__part-selector-wrap">
+                <label for="lightsaber-switch">
+                    Select Switch
+                </label><br />
                 <select class="c-lightsaber__part-selector js-part-selector" data-target="#lightsaber-switch">
                     <option value="images/power_control_switch_1.png">Power & Control 1</option>
                 </select>
             </div>
             <div class="c-lightsaber__part-selector-wrap">
+                <label for="lightsaber-sleeve-2-selector">
+                    Select Sleeve 2
+                </label><br />
                 <select class="c-lightsaber__part-selector js-part-selector" id="lightsaber-sleeve-2-selector"
 				data-target="#lightsaber-sleeve-2"
 				data-uses-duplicate-check="true"
@@ -45,6 +64,9 @@
                 </select>
             </div>
             <div class="c-lightsaber__part-selector-wrap">
+                <label for="lightsaber-pommel">
+                    Select Pommel
+                </label><br />
                 <select class="c-lightsaber__part-selector js-part-selector" data-target="#lightsaber-pommel">
                     <option value="images/peace_justice_pommel_1.png">Peace & Justice 1</option>
                     <option value="images/peace_justice_pommel_2.png">Peace & Justice 2</option>
@@ -77,7 +99,7 @@
         <button class="js-compare">Compare</button>
         <button class="js-compare-all">Compare All</button>
 
-        <p>
+        <p class="text-center text-xs">
             This site is for fan use only.  It is intended solely for informational purposes.
         </p>
     </body>

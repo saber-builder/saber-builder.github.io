@@ -2,6 +2,18 @@
 	display: none;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: .875rem;
+}
+
+.text-xs {
+    font-size: .75rem;
+}
+
 .close {
     position: absolute;
         right: 0;

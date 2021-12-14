@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="global.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="c-lightsaber js-lightsaber-builder">
+            <div class="c-lightsaber__part-selector-wrap">
+                <select class="c-lightsaber__part-selector js-part-selector" data-target="#lightsaber-emitter">
+					<option value="images/peace_justice_emitter_2.png">Peace & Justice 2</option>
+                    <option value="images/power_control_emitter_1.png" selected>Power & Control 1</option>
+                    <option value="images/elemental_nature_emitter_2.png">Elemental Nature 2</option>
+                </select>
+            </div>
+            <div class="c-lightsaber__part-selector-wrap">
+                <select class="c-lightsaber__part-selector js-part-selector" id="lightsaber-sleeve-1-selector"
+				data-target="#lightsaber-sleeve-1"
+				data-uses-duplicate-check="true"
+				data-matching-slot="#lightsaber-sleeve-2-selector">
+                    <option value="images/peace_justice_sleeve_1.png">Peace & Justice 1</option>
+                    <option value="images/peace_justice_sleeve_2.png">Peace & Justice 2</option>
+                    <option value="images/peace_justice_sleeve_3.png">Peace & Justice 3</option>
+                    <option value="images/power_control_sleeve_1.png">Power & Control 1</option>
+                    <option value="images/power_control_sleeve_2.png">Power & Control 2</option>
+                    <option value="images/elemental_nature_sleeve_1.png" selected>Elemental Nature 1</option>
+                </select>
+            </div>
+            <div class="c-lightsaber__part-selector-wrap">
+                <select class="c-lightsaber__part-selector js-part-selector" data-target="#lightsaber-switch">
+                    <option value="images/power_control_switch_1.png">Power & Control 1</option>
+                </select>
+            </div>
+            <div class="c-lightsaber__part-selector-wrap">
+                <select class="c-lightsaber__part-selector js-part-selector" id="lightsaber-sleeve-2-selector"
+				data-target="#lightsaber-sleeve-2"
+				data-uses-duplicate-check="true"
+				data-matching-slot="#lightsaber-sleeve-1-selector">
+                    <option value="images/peace_justice_sleeve_1.png" selected>Peace & Justice 1</option>
+                    <option value="images/peace_justice_sleeve_2.png">Peace & Justice 2</option>
+                    <option value="images/peace_justice_sleeve_3.png">Peace & Justice 3</option>
+                    <option value="images/power_control_sleeve_1.png">Power & Control 1</option>
+                    <option value="images/power_control_sleeve_2.png">Power & Control 2</option>
+                    <option value="images/elemental_nature_sleeve_1.png">Elemental Nature 1</option>
+                </select>
+            </div>
+            <div class="c-lightsaber__part-selector-wrap">
+                <select class="c-lightsaber__part-selector js-part-selector" data-target="#lightsaber-pommel">
+                    <option value="images/peace_justice_pommel_1.png">Peace & Justice 1</option>
+                    <option value="images/peace_justice_pommel_2.png">Peace & Justice 2</option>
+                    <option value="images/power_control_pommel_1.png">Power & Control 2</option>
+                    <option value="images/elemental_nature_pommel_1.png" selected>Elemental Nature 1</option>
+                </select>
+            </div>
+
+            <div class="c-lightsaber__part-wrap c-lightsaber__part-wrap--emitter js-lightsaber-part-wrap">
+                <img src="images/power_control_emitter_1.png" alt="" class="c-lightsaber__part" id="lightsaber-emitter" />
+            </div>
+            <div class="c-lightsaber__part-wrap js-lightsaber-part-wrap">
+                <img src="images/elemental_nature_sleeve_1.png" alt="" class="c-lightsaber__part" id="lightsaber-sleeve-1" />
+            </div>
+            <div class="c-lightsaber__part-wrap js-lightsaber-part-wrap">
+                <img src="images/power_control_switch_1.png" alt="" class="c-lightsaber__part" id="lightsaber-switch" />
+            </div>
+            <div class="c-lightsaber__part-wrap js-lightsaber-part-wrap">
+                <img src="images/peace_justice_sleeve_1.png" alt="" class="c-lightsaber__part c-lightsaber__part--sleeve-2" id="lightsaber-sleeve-2" />
+            </div>
+            <div class="c-lightsaber__part-wrap c-lightsaber__part-wrap--pommel js-lightsaber-part-wrap">
+                <img src="images/elemental_nature_pommel_1.png" alt="" class="c-lightsaber__part" id="lightsaber-pommel" />
+            </div>
+        </div>
+        <button class="js-randomize">Randomize</button>
+		<div class="form-group">
+			<input type="checkbox" id="allow-duplicates" class="js-allow-duplicates" value="true" />
+			<label for="allow-duplicates">Allow Duplicates</label>
+		</div>
+        <button class="js-compare">Compare</button>
+        <button class="js-compare-all">Compare All</button>
+    </body>
+</html>

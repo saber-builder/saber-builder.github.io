@@ -1,0 +1,49 @@
+'use strict';
+
+function updateForDuplicates($elem) {
+	if (!$('#allow-duplicates').is(':checked') && $elem.data('uses-duplicate-check') && $elem.data('matching-slot')) {
+		const $matchingPart = $($elem.data('matching-slot'));
+		
+		if ($matchingPart.length) {
+			const $options = $matchingPart.find('option');
+			$options.removeClass('d-none')
+				.attr('disabled', false);
+			$options.filter(`[value="${$elem.val()}"]`).addClass('d-none')
+				.attr('disabled', true);
+		}
+	}
+}
+
+$(document).ready(function () {
+    $('.js-part-selector').on('change', function () {
+        const target = $(this).data('target');
+        const $saberPart = $(target);
+		
+		updateForDuplicates($(this));
+
+        if ($saberPart.length) {
+            $saberPart.attr('src', $(this).val());
+        }
+    });
+
+    $('.js-randomize').on('click', function () {
+        $('.js-part-selector').each(function (ind, elem) {
+            const $elem = $(elem);
+            const partInd = Math.floor(Math.random(new Date()) * $elem.find('option').length);
+			if (ind === 1) {
+				console.log($elem.find(':selected'));
+				console.log($elem.find('option').length);
+				console.log(partInd);
+			}
+            $elem.val($elem.find(`option:eq(${partInd})`).val());
+            $elem.trigger('change');
+        });
+    });
+	
+	$('.js-allow-duplicates').on('change', function () {
+		if ($(this).is(':checked')) {
+			$('.js-part-selector').find('option').removeClass('d-none')
+				.attr('disabled', false);
+		}
+	});
+});

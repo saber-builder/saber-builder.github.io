@@ -1,0 +1,39 @@
+.d-none {
+	display: none;
+}
+
+.close {
+    position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+}
+
+.c-lightsaber {
+    display: grid;
+        grid-template-columns: minmax(auto, 1fr) auto auto auto minmax(auto, 1fr);
+        grid-auto-rows: auto;
+	margin-bottom: 10px;
+    position: relative;
+}
+.c-lightsaber__part-selector-wrap:nth-child(5n + 1),
+.c-lightsaber__part-wrap:nth-child(5n + 1) {
+    text-align: right;
+}
+.c-lightsaber__part-wrap--emitter,
+.c-lightsaber__part-wrap--pommel {
+	z-index: 1;
+}
+.c-lightsaber__part-wrap--emitter {
+	margin-right: -8px;
+}
+.c-lightsaber__part-wrap--pommel {
+	margin-left: -8px;
+}
+.c-lightsaber__part {
+    height: 210px;
+    width: auto;
+}
+.c-lightsaber__part--sleeve-2 {
+    transform: rotate(180deg);
+}

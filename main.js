@@ -34,6 +34,10 @@ function cycleParts(ind) {
     });
 }
 
+function init() {
+    $('.js-part-selector').trigger('change');
+}
+
 $(document).ready(function () {
     $('.js-part-selector').on('change', function () {
         const target = $(this).data('target');
@@ -85,4 +89,6 @@ $(document).ready(function () {
             $(this).closest($(this).data('target')).remove();
         }
     });
+
+    init(); // Make sure displayed parts match options
 });

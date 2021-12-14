@@ -68,7 +68,7 @@ $(document).ready(function () {
 	});
 
     $('.js-compare').on('click', function () {
-        let $saber = $('<div class="c-lightsaber js-lightsaber"></div>');
+        let $saber = $('<div class="c-lightsaber js-lightsaber js-compare-lightsaber"></div>');
 
         $('.js-lightsaber-builder .js-lightsaber-part-wrap').each(function (ind, part) {
             const $part = $(part).clone();
@@ -81,6 +81,7 @@ $(document).ready(function () {
     });
 
     $('.js-compare-all').on('click', function () {
+        $('.js-compare-lightsaber').remove(); // Prevent stacking of extra compares
         cycleParts(0);
     })
 

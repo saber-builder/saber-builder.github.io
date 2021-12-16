@@ -1,5 +1,6 @@
 select,
 button {
+    font-size: 1rem;
     padding: .375rem .5rem;
 }
 

@@ -1,0 +1,21 @@
+{
+  "name": "lightsaber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6", "@babel/preset-react": "^7.9.4", "@babel/cli": "^7.8.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@saber-builder-GitHub:saber-builder/saber-builder.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

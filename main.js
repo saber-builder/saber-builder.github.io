@@ -1,5 +1,8 @@
 'use strict';
 
+let params = window.location.search.split('&');
+console.log(params);
+
 function updateForDuplicates($elem) {
 	if (!$('#allow-duplicates').is(':checked') && $elem.data('uses-duplicate-check') && $elem.data('matching-slot')) {
 		const $matchingPart = $($elem.data('matching-slot'));

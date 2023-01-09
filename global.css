@@ -1,7 +1,13 @@
 select,
 button {
     font-size: 1rem;
-    padding: .375rem .5rem;
+    padding-bottom: .375rem;
+    padding-top: .375rem;
+}
+
+button {
+    padding-left: .5rem;
+    padding-right: .5rem;
 }
 
 .container {
@@ -73,6 +79,7 @@ button {
     height: 210px;
     width: auto;
 }
-.c-lightsaber__part--sleeve-2 {
+.c-lightsaber__part--sleeve-2,
+.c-lightsaber__part--sleeve2 {
     transform: rotate(180deg);
 }

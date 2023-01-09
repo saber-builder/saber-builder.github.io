@@ -255,7 +255,7 @@ class App extends React.Component {
     let parts = [];
     Object.keys(state.parts).forEach((key, ind) => {
       const part = state.parts[key];
-      keyItems.push(`${key}-${part}`);
+      keyItems.push(`${key}-${part.ind}`);
       parts.push( /*#__PURE__*/React.createElement(LightsaberPart, {
         elem: JSON.stringify(partLists[ind]),
         selected: state.parts[key].ind || 0,
@@ -280,7 +280,7 @@ class App extends React.Component {
     let parts = [];
     Object.keys(state.parts).forEach((key, ind) => {
       const part = this.state.parts[key];
-      keyItems.push(`${key}-${part}`);
+      keyItems.push(`${key}-${part.ind}`);
       parts.push( /*#__PURE__*/React.createElement(LightsaberPart, {
         elem: JSON.stringify(partLists[ind]),
         selected: state.parts[key].ind || 0,
@@ -291,7 +291,20 @@ class App extends React.Component {
       className: "c-lightsaber js-lightsaber js-compare-lightsaber",
       "data-test": JSON.stringify(state.parts),
       key: keyItems.join('-')
-    }, parts)]);
+    }, parts, /*#__PURE__*/React.createElement("button", {
+      className: "close js-close",
+      "data-target": keyItems.join('-'),
+      onClick: this.removeCompare
+    }, "Remove"))]);
+    this.setState(state);
+  };
+  removeCompare = e => {
+    let state = this.state;
+    const target = e.target.dataset.target;
+    let compares = state.compares.filter(obj => {
+      return obj.key !== target;
+    });
+    state.compares = compares;
     this.setState(state);
   };
   allowDuplicates = e => {
@@ -335,10 +348,10 @@ class App extends React.Component {
       checked: state.allowDuplicates
     }), /*#__PURE__*/React.createElement("label", {
       htmlFor: "allow-duplicates"
-    }, "Allow Duplicates")), this.state.compares, /*#__PURE__*/React.createElement("button", {
+    }, "Allow Duplicates")), /*#__PURE__*/React.createElement("button", {
       className: "js-compare",
       onClick: this.doCompare
-    }, "Compare"));
+    }, "Compare"), this.state.compares);
   }
 
 } // npx babel --watch src --out-dir . --presets react-app/prod

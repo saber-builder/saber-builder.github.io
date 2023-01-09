@@ -282,7 +282,7 @@ class App extends React.Component {
         let parts = [];
         Object.keys(state.parts).forEach((key, ind) => {
             const part = state.parts[key];
-            keyItems.push(`${key}-${part}`);
+            keyItems.push(`${key}-${part.ind}`);
             parts.push(<LightsaberPart elem={JSON.stringify(partLists[ind])} selected={state.parts[key].ind || 0} key={key}></LightsaberPart>);
         });
 
@@ -307,15 +307,28 @@ class App extends React.Component {
         let parts = [];
         Object.keys(state.parts).forEach((key, ind) => {
             const part = this.state.parts[key];
-            keyItems.push(`${key}-${part}`);
+            keyItems.push(`${key}-${part.ind}`);
             parts.push(<LightsaberPart elem={JSON.stringify(partLists[ind])} selected={state.parts[key].ind || 0} key={key}></LightsaberPart>);
         });
 
         state.compares = state.compares.concat([(
             <div className="c-lightsaber js-lightsaber js-compare-lightsaber" data-test={JSON.stringify(state.parts)} key={keyItems.join('-')}>
                 {parts}
+                <button className="close js-close" data-target={keyItems.join('-')} onClick={ this.removeCompare }>Remove</button>
             </div>
         )]);
+
+        this.setState(state);
+    }
+
+    removeCompare = (e) => {
+        let state = this.state;
+        const target = e.target.dataset.target;
+        let compares = state.compares.filter( obj => {
+            return obj.key !== target;
+        });
+
+        state.compares = compares;
 
         this.setState(state);
     }
@@ -354,8 +367,8 @@ class App extends React.Component {
                     <input type="checkbox" id="allow-duplicates" className="js-allow-duplicates" value="true" onChange={this.allowDuplicates} checked={state.allowDuplicates} />
                     <label htmlFor="allow-duplicates">Allow Duplicates</label>
                 </div>
-                {this.state.compares}
                 <button className="js-compare" onClick={this.doCompare}>Compare</button>
+                {this.state.compares}
             </React.Fragment>
         );
     }
